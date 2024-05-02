@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <script src="js/jquery-2.1.3.min.js"></script>
+    <link rel="stylesheet" href="css/sample.css">
+    <title>じゃんけん</title>
+</head>
+
+<body>
+
+    <header>
+        <h1>じゃんけん</h1>
+    </header>
+
+    <main>
+        <ul>
+            <li id="gu_btn"><img src="img/gu.jpg" height="200"></li>
+            <li id="cho_btn"><img src="img/cho.jpg" height="200"></li>
+            <li id="par_btn"><img src="img/par.jpg" height="200"></li>
+        </ul>
+        <div class="view">
+            <div id="q">コンピュータの出した手は？<span id="pc_hands"></span></div>
+            <div id="judgment"></div>
+        </div>
+    </main>
+
+    <footer>
+        <h5>©なっちゃん</h5>
+    </footer>
+    <script>
+        //自分の手がグー
+        $("#gu_btn").on("click", function () {
+            //1.乱数（1〜3）
+            const r = Math.ceil(Math.random() * 3);
+            //2.if分岐処理
+            let view = "";
+            let result = "";
+            if (r == 1) {
+                view = '<img src = "img/gu.jpg" height="200">'; //1ならPCはグー
+                result = '<img src = "img/hikiwake.jpg" height="200">';
+            } else if (r == 2) { //2ならPCはチョキ
+                view = '<img src = "img/cho.jpg" height="200">';
+                result = '<img src = "img/winner.jpg" height="200">';
+            } else {
+                view = '<img src = "img/par.jpg" height="200">'; //それ以外（要は3）ならPCはパー
+                result = '<img src = "img/loser.jpg" height="200">';
+            }
+            //3.表示処理
+            //PCの出した手
+            $("#pc_hands").html(view);
+            //結果
+            $("#judgment").html(result);
+
+        });
+
+        //自分の手がチョキ
+        $("#cho_btn").on("click", function () {
+            //1.乱数（1〜3）
+            const r = Math.ceil(Math.random() * 3);
+            //2.if分岐処理
+            let view = "";
+            let result = "";
+            if (r == 1) {
+                view = '<img src = "img/gu.jpg" height="200">'; //1ならPCはグー
+                result = '<img src = "img/loser.jpg" height="200">';
+            } else if (r == 2) { //2ならPCはチョキ
+                view = '<img src = "img/cho.jpg" height="200">';
+                result = '<img src = "img/hikiwake.jpg" height="200">';
+            } else {
+                view = '<img src = "img/par.jpg" height="200">'; //それ以外（要は3）ならPCはパー
+                result = '<img src = "img/winner.jpg" height="200">';
+            }
+            //3.表示処理
+            //PCの出した手
+            $("#pc_hands").html(view);
+            //結果
+            $("#judgment").html(result);
+        });
+
+        //自分の手がパー
+        $("#par_btn").on("click", function () {
+            //1.乱数（1〜3）
+            const r = Math.ceil(Math.random() * 3);
+            //2.if分岐処理
+            let view = "";
+            let result = "";
+            if (r == 1) {
+                view = '<img src = "img/gu.jpg" height="200">'; //1ならPCはグー
+                result = '<img src = "img/winner.jpg" height="200">';
+            } else if (r == 2) { //2ならPCはチョキ
+                view = '<img src = "img/cho.jpg" height="200">';
+                result = '<img src = "img/loser.jpg" height="200">';
+            } else {
+                view = '<img src = "img/par.jpg" height="200">'; //それ以外（要は3）ならPCはパー
+                result = '<img src = "img/hikiwake.jpg" height="200">';
+            }
+            //3.表示処理
+            //PCの出した手
+            $("#pc_hands").html(view);
+            //結果
+            $("#judgment").html(result);
+        });
+    </script>
+</body>
+
+</html>
