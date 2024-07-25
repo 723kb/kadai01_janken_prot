@@ -1,6 +1,6 @@
 # ①課題番号-プロダクト名
 
-kadai01_janken
+kadai01_janken_prot
 
 ## ②課題内容（どんな作品か）
 
